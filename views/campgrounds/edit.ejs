@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate') %>
+    <h1>Edit Campground</h1>
+    <form action="http://localhost:3000/campgrounds/<%=campground._id%>?_method=PUT" method="post" novalidate
+        class="needs-validation">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" value="<%=campground.title%>" required>
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class=" mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" name="location" value="<%=campground.location%>" required>
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class=" mb-3">
+            <label for="image" class="form-label">Image URL</label>
+            <input type="text" class="form-control" name="image" value="<%=campground.image%>" required>
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class=" mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" name="description" rows="3" required><%=campground.description%></textarea>
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </form>
+
+    <footer>
+        <a href="/campgrounds">Return to Campgrounds</a>
+    </footer>
